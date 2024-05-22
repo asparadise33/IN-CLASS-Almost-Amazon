@@ -1,9 +1,33 @@
-// import client from '../utils/client';
+import client from '../utils/client';
 
-// const endpoint = client.databaseURL;
+const endpoint = client.databaseURL;
 
-// FIXME:  GET ALL AUTHORS
-const getAuthors = () => {};
+// FIXME:  GET ALL AUTHORS---DONE
+// this is the call to the API to get our authors
+const getAuthors = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/authors.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+
+// ADD a filter function for fav authors
+const favAuthor = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/authors.json?orderBy="favorite"&equalTo=true`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
 
 // FIXME: CREATE AUTHOR
 const createAuthor = () => {};
@@ -27,4 +51,5 @@ export {
   deleteSingleAuthor,
   updateAuthor,
   getAuthorBooks,
+  favAuthor,
 };
