@@ -1,5 +1,5 @@
-import client from '../utils/client';
 // API CALLS FOR BOOKS
+import client from '../utils/client';
 
 const endpoint = client.databaseURL;
 
