@@ -31,8 +31,8 @@ const navigationEvents = () => {
     console.warn('CLICKED AUTHORS');
   });
 
-  // add an EL for fav author filter function
-  document.querySelector('#sale-books').addEventListener('click', () => {
+  // add an EL for fav author filter function--DONE
+  document.querySelector('#favorite-authors').addEventListener('click', () => {
     favAuthor().then(showAuthors);
   });
   // STRETCH: SEARCH
