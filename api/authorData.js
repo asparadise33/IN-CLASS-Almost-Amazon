@@ -38,7 +38,7 @@ const getSingleAuthor = () => {};
 // FIXME: DELETE AUTHOR
 // const deleteSingleAuthor = () => {};
 const deleteSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/authors${firebaseKey}.json`, {
+  fetch(`${endpoint}/authors/${firebaseKey}.json`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
