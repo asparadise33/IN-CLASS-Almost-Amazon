@@ -57,12 +57,13 @@ const domEvents = () => {
       addAuthorForm();
       console.warn('ADD AUTHOR');
     }
+    // VIEW SINGLE AUTHOR DETAILS
     if (e.target.id.includes('view-author-btn')) {
       console.warn('VIEW AUTHOR', e.target.id);
       console.warn(e.target.id.split('--'));
     }
     // FIXME: ADD CLICK EVENT FOR EDITING AN AUTHOR ---DONE
-    if (e.target.id.includes('edit-author-btn')) {
+    if (e.target.id.includes('update-author')) {
       const [, firebaseKey] = e.target.id.split('--');
 
       getSingleAuthor(firebaseKey).then((authorObj) => addAuthorForm(authorObj));
